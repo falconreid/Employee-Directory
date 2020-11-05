@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import EmpCard from "./components/EmpCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
+import Logo from "./components/Logo";
 // import employees...
 import employees from "./employees.json";
 
 class App extends Component {
   state = {
     employees,
+    logo,
   };
 
   removeEmp = (id) => {
@@ -19,6 +21,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
+        <Logo>{logo}</Logo>
         <Title>Employees</Title>
         {this.state.employees.map((emp) => (
           <EmpCard
