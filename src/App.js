@@ -3,13 +3,14 @@ import EmpCard from "./components/EmpCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import Logo from "./components/Logo";
+import LogoImage from "./components/Logo/EmpDirLogo.png";
 // import employees...
 import employees from "./employees.json";
 
 class App extends Component {
   state = {
     employees,
-    logo,
+    logo: LogoImage,
   };
 
   removeEmp = (id) => {
@@ -21,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Logo>{logo}</Logo>
+        <Logo logo={this.state.logo} />
         <Title>Employees</Title>
         {this.state.employees.map((emp) => (
           <EmpCard

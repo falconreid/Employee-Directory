@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.css";
-import logo from "./EmpDirLogo.png";
+// import logo from "./EmpDirLogo.png";
 
 function Logo(props) {
-  return <Logo className="logo" src={logo} />;
+  return <img src={props.logo} />;
 }
 
 export default Logo;
