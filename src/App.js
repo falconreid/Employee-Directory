@@ -35,20 +35,22 @@ class App extends Component {
         }
         return 0;
       });
-      console.log(employeesB);
+      console.log("employees B: ", employeesB);
+      this.setState({ ...this.state, employees: employeesB });
     } else if (this.state.employees[0].name !== "Bin Chun") {
       const employeesA = this.state.employees.sort(function (a, b) {
         var nameA = a.name.toLowerCase();
         var nameB = b.name.toLowerCase();
-        if (nameA > nameB) {
+        if (nameA < nameB) {
           return -1;
         }
-        if (nameA < nameB) {
+        if (nameA > nameB) {
           return 1;
         }
         return 0;
       });
-      console.log(employeesA);
+      console.log("employees A: ", employeesA);
+      this.setState({ ...this.state, employees: employeesA });
     }
   };
 
@@ -58,7 +60,7 @@ class App extends Component {
         <Logo logo={this.state.logo} />
 
         <Sort>
-          <Button variant="info" onClick={this.sortEmp()}>
+          <Button variant="info" onClick={this.sortEmp}>
             Arrange Employees
           </Button>
         </Sort>
@@ -72,8 +74,6 @@ class App extends Component {
             email={emp.email}
           />
         ))}
-
-        {console.log("these blessed people: ", this.state.employees)}
       </Wrapper>
     );
   }
