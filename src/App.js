@@ -40,10 +40,10 @@ class App extends Component {
       const employeesA = this.state.employees.sort(function (a, b) {
         var nameA = a.name.toLowerCase();
         var nameB = b.name.toLowerCase();
-        if (nameA < nameB) {
+        if (nameA > nameB) {
           return -1;
         }
-        if (nameA > nameB) {
+        if (nameA < nameB) {
           return 1;
         }
         return 0;
@@ -58,8 +58,9 @@ class App extends Component {
         <Logo logo={this.state.logo} />
 
         <Sort>
-          <Button variant="info">Arrange Employees</Button>
-          {this.sortEmp()}
+          <Button variant="info" onClick={this.sortEmp()}>
+            Arrange Employees
+          </Button>
         </Sort>
         {this.state.employees.map((emp) => (
           <EmpCard
