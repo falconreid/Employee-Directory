@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function EmpCard({ id, image, name, position, email }) {
+function EmpCard({ image, name, position, email }) {
   return (
     <div className="card">
       <div className="img-container">
@@ -20,9 +20,6 @@ function EmpCard({ id, image, name, position, email }) {
           </li>
         </ul>
       </div>
-      <span onClick={() => id.removeEmp(id)} className="remove">
-        𝘅
-      </span>
     </div>
   );
 }
