@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import EmpCard from "./components/EmpCard";
 import Wrapper from "./components/Wrapper";
 import Logo from "./components/Logo";
 import Sort from "./components/Sort";
+import SearchForm from "./components/SearchForm";
 import LogoImage from "./components/Logo/EmpDirLogo.png";
 // import employees...
 import employees from "./employees.json";
@@ -13,12 +17,6 @@ class App extends Component {
     employees,
     logo: LogoImage,
   };
-
-  // removeEmp = (id) => {
-  //   const employees = this.state.employees.filter((emp) => emp.id !== id);
-
-  //   this.setState({ employees });
-  // };
 
   // Sort Employees in reverse order
 
@@ -57,23 +55,48 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Logo logo={this.state.logo} />
-
-        <Sort>
-          <Button variant="info" onClick={this.sortEmp}>
-            Arrange Employees
-          </Button>
-        </Sort>
-        {this.state.employees.map((emp) => (
-          <EmpCard
-            id={emp.id}
-            key={emp.id}
-            name={emp.name}
-            image={emp.image}
-            position={emp.position}
-            email={emp.email}
-          />
-        ))}
+        <Container
+          fluid="md"
+          style={{
+            borderBottomColor: "black",
+            borderBottomWidth: 1,
+            marginBottom: 25,
+          }}
+        >
+          <Row className="justify-content-md-center">
+            <Logo logo={this.state.logo} fluid />
+          </Row>
+        </Container>
+        <Container>
+          <Row>
+            <Col md={6}>
+              <Sort>
+                <p>Change Sorted Order</p>
+                <Button variant="info" onClick={this.sortEmp}>
+                  Arrange Employees
+                </Button>
+              </Sort>
+            </Col>
+            <Col md={6}>
+              <p id="search-name">Search by Name</p>
+              <SearchForm />
+            </Col>
+          </Row>
+        </Container>
+        <Container>
+          <Row md={12}>
+            {this.state.employees.map((emp) => (
+              <EmpCard
+                id={emp.id}
+                key={emp.id}
+                name={emp.name}
+                image={emp.image}
+                position={emp.position}
+                email={emp.email}
+              />
+            ))}
+          </Row>
+        </Container>
       </Wrapper>
     );
   }
