@@ -1,31 +1,41 @@
-# Unit 19 React Homework: Employee Directory
+# FacePlant Employee Directory
 
 ## Overview
 
-For this assignment, you'll create a employee directory with React. This assignment will require you to break up your application's UI into components, manage component state, and respond to user events.
+An employee directory created with React, Node, JS, JSON.
 
 ## User Story
 
-- As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+- As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information. I want to be able to sort A-Z and have a search function that pulls up the employee as I'm typing in the search form.
 
 ## Business Context
 
 An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
 
-## Acceptance Criteria
+## Functionality
 
-Given a table of random users, when the user loads the page, a table of employees should render.
+Given a set of employees, when the user loads the page, a set of employees should render.
 
 The user should be able to:
 
-- Sort the table by at least one category
+- Sort the employees by at least one category
 
 - Filter the users by at least one property.
 
-## Submission on BCS
+## Main Dependencies
 
-You are required to submit the following:
+"react": "^17.0.1",
+"react-bootstrap": "^1.4.0",
 
-- the URL to the deployed application
+# Installation
 
-- the URL to the Github repository
+This app is deployed to via Github Pages. To see the app:
+[Github Page]()
+
+### Screenshots
+
+Landing Page with Employee Cards A-Z
+
+Sorted in reverse order Z-A
+
+Search function activated, pulling up employees by search string
