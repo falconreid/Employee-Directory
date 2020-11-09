@@ -35,7 +35,9 @@ This app is deployed to via Github Pages. To see the app:
 ### Screenshots
 
 Landing Page with Employee Cards A-Z
-
+![EmpDir-1](https://user-images.githubusercontent.com/5247408/98570235-72a48c00-2270-11eb-8c56-d8e902b001ac.png)
 Sorted in reverse order Z-A
+![EmpDir-2](https://user-images.githubusercontent.com/5247408/98570286-82bc6b80-2270-11eb-964b-c05889ebb641.png)
 
 Search function activated, pulling up employees by search string
+![EmpDir-3](https://user-images.githubusercontent.com/5247408/98570314-8cde6a00-2270-11eb-8ac4-35e4626b17aa.png)
