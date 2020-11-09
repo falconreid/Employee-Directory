@@ -54,19 +54,18 @@ class App extends Component {
     }
   };
 
-  // handleInputChange = (event) => {
-  //   const { value } = event.target;
+  handleInputChange = (event) => {
+    const { value } = event.target;
 
-  //   // setSearch(value);
-  //   console.log(value);
-  //   let newResults = employees.filter((employee) => {
-  //     return (
-  //       employee.name.first.toLowerCase().includes(value.toLowerCase()) ||
-  //       employee.name.last.toLowerCase().includes(value.toLowerCase())
-  //     );
-  //   });
-  //   setResults(newResults);
-  // };
+    console.log(value);
+    let newResults = this.state.employee.filter((employee) => {
+      return (
+        employee.name.first.toLowerCase().includes(value.toLowerCase()) ||
+        employee.name.last.toLowerCase().includes(value.toLowerCase())
+      );
+    });
+    newResults.map(this.state.employee);
+  };
 
   render() {
     return (
@@ -96,8 +95,8 @@ class App extends Component {
             <Col md={6}>
               <p id="search-name">Search by Name</p>
               <SearchForm
-              // handleInputChange={this.employee.handleInputChange}
-              // search={this.search}
+                handleInputChange={this.handleInputChange}
+                search={this.search}
               />
             </Col>
           </Row>

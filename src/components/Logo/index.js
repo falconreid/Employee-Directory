@@ -3,7 +3,7 @@ import "./style.css";
 // import logo from "./EmpDirLogo.png";
 
 function Logo(props) {
-  return <img src={props.logo} />;
+  return <img src={props.logo} alt={props.logo} />;
 }
 
 export default Logo;

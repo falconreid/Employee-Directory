@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+// import ReactDOM from "react-dom";
 import "./SearchName.css";
 
-import employees from "../../employees.json";
+// import employees from "../../employees.json";
 
 const SearchName = (props) => {
-  // const [searchTerm, setSearchTerm] = props.useState("");
-  // const handleChange = (event) => {
-  //   setSearchTerm(event.target.value);
-  // };
-
-  // React.useEffect(() => {
-  //   const results = employees.filter((employees) =>
-  //     employee.toLowerCase().includes(searchTerm)
-  //   );
-  //   setSearchResults(results);
-  // }, [searchTerm]);
-
   return (
     <div className="searchbox">
       <div className="input-group">
@@ -30,8 +18,8 @@ const SearchName = (props) => {
           type="search"
           placeholder="name"
           aria-label="Search"
-          // value={searchTerm}
-          // onChange={handleChange}
+          value={this}
+          onChange={this}
         />
       </div>
     </div>
