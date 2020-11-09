@@ -1,0 +1,15 @@
+{
+  "name": "Employee Directory",
+  "short_name": "EmpDir",
+  "icons": [
+    {
+      "src": "./img/EmpDir-icon.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "start_url": "/",
+  "display": "standalone"
+}
