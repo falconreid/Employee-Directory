@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+// import EmpContext from "./utils/empContext";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+// styling imports
 import EmpCard from "./components/EmpCard";
 import Wrapper from "./components/Wrapper";
 import Logo from "./components/Logo";
@@ -52,6 +54,20 @@ class App extends Component {
     }
   };
 
+  // handleInputChange = (event) => {
+  //   const { value } = event.target;
+
+  //   // setSearch(value);
+  //   console.log(value);
+  //   let newResults = employees.filter((employee) => {
+  //     return (
+  //       employee.name.first.toLowerCase().includes(value.toLowerCase()) ||
+  //       employee.name.last.toLowerCase().includes(value.toLowerCase())
+  //     );
+  //   });
+  //   setResults(newResults);
+  // };
+
   render() {
     return (
       <Wrapper>
@@ -79,7 +95,10 @@ class App extends Component {
             </Col>
             <Col md={6}>
               <p id="search-name">Search by Name</p>
-              <SearchForm />
+              <SearchForm
+              // handleInputChange={this.employee.handleInputChange}
+              // search={this.search}
+              />
             </Col>
           </Row>
         </Container>
