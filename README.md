@@ -27,6 +27,11 @@ The user should be able to:
 "react": "^17.0.1",
 "react-bootstrap": "^1.4.0",
 
+## Collaboration
+
+Kirby Craft
+Ali Hernandez
+
 # Installation
 
 This app is deployed to via Github Pages. To see the app:
