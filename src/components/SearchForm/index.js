@@ -1,10 +1,7 @@
 import React from "react";
-// import ReactDOM from "react-dom";
 import "./SearchName.css";
 
-// import employees from "../../employees.json";
-
-const SearchName = (props) => {
+function SearchName({ handleInputChange }) {
   return (
     <div className="searchbox">
       <div className="input-group">
@@ -19,11 +16,11 @@ const SearchName = (props) => {
           placeholder="name"
           aria-label="Search"
           value={this}
-          onChange={this}
+          onChange={(e) => handleInputChange(e)}
         />
       </div>
     </div>
   );
-};
+}
 
 export default SearchName;

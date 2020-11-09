@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import EmpContext from "./utils/empContext";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -18,6 +17,7 @@ class App extends Component {
   state = {
     employees,
     logo: LogoImage,
+    filteredEmployees: employees,
   };
 
   // Sort Employees in reverse order
@@ -54,20 +54,24 @@ class App extends Component {
     }
   };
 
-  handleInputChange = (event) => {
-    const { value } = event.target;
+  handleInputChange = (e) => {
+    const searchEmployeeByName = e.target.value;
+    const { employees } = this.state;
 
-    console.log(value);
-    let newResults = this.state.employee.filter((employee) => {
-      return (
-        employee.name.first.toLowerCase().includes(value.toLowerCase()) ||
-        employee.name.last.toLowerCase().includes(value.toLowerCase())
-      );
-    });
-    newResults.map(this.state.employee);
+    let newEmployeeList = employees.filter((employee) =>
+      employee.name.toLowerCase().includes(searchEmployeeByName.toLowerCase())
+    );
+
+    if (searchEmployeeByName.length !== 0) {
+      this.setState({ filteredEmployees: newEmployeeList });
+    } else {
+      this.setState({ filteredEmployees: employees });
+    }
   };
 
   render() {
+    const { filteredEmployees, logo } = this.state;
+
     return (
       <Wrapper>
         <Container
@@ -79,7 +83,7 @@ class App extends Component {
           }}
         >
           <Row className="justify-content-md-center">
-            <Logo logo={this.state.logo} fluid />
+            <Logo logo={logo} fluid />
           </Row>
         </Container>
         <Container>
@@ -94,16 +98,13 @@ class App extends Component {
             </Col>
             <Col md={6}>
               <p id="search-name">Search by Name</p>
-              <SearchForm
-                handleInputChange={this.handleInputChange}
-                search={this.search}
-              />
+              <SearchForm handleInputChange={this.handleInputChange} />
             </Col>
           </Row>
         </Container>
         <Container>
           <Row md={12}>
-            {this.state.employees.map((emp) => (
+            {filteredEmployees.map((emp) => (
               <EmpCard
                 id={emp.id}
                 key={emp.id}
